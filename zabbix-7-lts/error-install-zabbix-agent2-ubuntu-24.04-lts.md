@@ -10,11 +10,13 @@ sudo apt install --install-recommends zabbix-agent2 zabbix-agent2-plugin-*
 ```
 
 O sistema retorna o seguinte erro:
-
+```bash
 Reading package lists... Done
 Building dependency tree... Done
 Reading state information... Done
 E: Unable to locate package zabbix-agent2
 E: Unable to locate package zabbix-agent2-plugin-*
 E: Couldn't find any package by glob 'zabbix-agent2-plugin-*'
+```
+
 Este erro significa que o apt não sabe onde encontrar os pacotes zabbix-agent2 e seus plugins.
