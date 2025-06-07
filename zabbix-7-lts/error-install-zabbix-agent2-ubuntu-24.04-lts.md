@@ -7,6 +7,7 @@ Este guia detalhado aborda o erro comum `E: Unable to locate package zabbix-agen
 Ao tentar instalar o Zabbix Agent 2 com o comando:
 ```bash
 sudo apt install --install-recommends zabbix-agent2 zabbix-agent2-plugin-*
+```
 
 O sistema retorna o seguinte erro:
 
