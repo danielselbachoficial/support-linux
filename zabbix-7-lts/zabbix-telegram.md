@@ -876,11 +876,11 @@ tail -f /var/log/zabbix/alertscripts/telegram.log
 
 ### ✅ Checklist de Validação
 
-- [ ] Bot criado e token obtido
-- [ ] Grupo/canal configurado
-- [ ] TOPIC_IDs validados com script
-- [ ] Media Type configurado no Zabbix
-- [ ] Actions criadas e testadas
-- [ ] Logs funcionando corretamente
-- [ ] Sistema de fallback testado
-- [ ] Monitoramento 24/7 ativo
+- [x] Bot criado e token obtido
+- [x] Grupo/canal configurado
+- [x] TOPIC_IDs validados com script
+- [x] Media Type configurado no Zabbix
+- [x] Actions criadas e testadas
+- [x] Logs funcionando corretamente
+- [x] Sistema de fallback testado
+- [x] Monitoramento 24/7 ativo
