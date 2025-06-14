@@ -358,6 +358,8 @@ Marque todas as opções para monitoramento 24/7 completo:
 ---
 
 ## 5. Validação do Topic_ID com o script \"validate_telegram_system.sh\"
+Crie o script para validar o Topic_ID com o comando abaixo:
+sudo nano validate_telegram_system.sh
 
 ```bash
 #!/bin/bash
