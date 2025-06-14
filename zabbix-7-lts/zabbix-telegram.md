@@ -59,11 +59,37 @@ Antes de iniciar a configuração, certifique-se de que os seguintes requisitos 
 ### ⚠️ Importante
 Os valores de Bot Token (6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q) e Chat ID (-1001987654321) utilizados neste manual são totalmente fictícios e servem apenas como exemplo. Substitua pelos valores reais do seu ambiente.
 
+## 3. Visão Geral do Script de Alerta Telegram
+
+### 📄 Finalidade do Script
+O script telegram_alert.sh é responsável por:
+- Processar alertas enviados pelo Zabbix em tempo real
+- Extrair TOPIC_IDs dos assuntos dos alertas para roteamento
+- Formatar mensagens com emojis e estrutura clara para melhor visualização
+- Rotear alertas para tópicos específicos no Telegram
+- Implementar sistema de fallback para garantir entrega 24/7
+- Registrar logs detalhados para monitoramento e troubleshooting
+
+### 📍 Localização do Script
+```bash
+/usr/lib/zabbix/alertscripts/telegram_alert.sh
+```
+
+🎯 Exemplos de TOPIC_IDs
+O script utiliza TOPIC_IDs para organizar diferentes tipos de alertas em tópicos específicos, permitindo uma gestão eficiente do monitoramento 24/7:
+
+TOPIC_ID	Categoria	   Uso Recomendado
+2	        Recuperação  - Brute Force	Ataques de segurança controlados
+4	        Recuperação  - Incidentes Zabbix	Problemas do sistema de monitoramento
+6	        Recuperação  - Borda Clientes (Padrão)	Conectividade e serviços gerais
+76	        Operações    - Backups, manutenções, serviços
+78	        Atualizações - Configurações, software, patches
+
 Script telegram_alert.sh
 ```bash
 cat telegram_alert.sh
 #!/bin/bash
-# Telegram Alert Script - Final Working Version
+# Telegram Alert Script
 # TOPIC_IDs Validados: 2, 4, 6, 76, 78
 
 # ==================== CONFIGURAÇÕES ====================
@@ -71,7 +97,6 @@ BOT_TOKEN="6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q"
 CHAT_ID="-1001987654321"
 DEFAULT_THREAD_ID=6
 LOG_FILE="/var/log/zabbix/alertscripts/telegram.log"
-SCRIPT_VERSION="FinalWorking-v1.0"
 
 # ==================== FUNÇÕES ====================
 
