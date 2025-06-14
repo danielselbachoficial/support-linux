@@ -5,8 +5,8 @@
 2. Pré-requisitos
 3. Visão Geral do Script de Alerta Telegram
 4. Configuração no Zabbix Frontend
-5. Validação do Topic_ID com o script "validate_telegram_system.sh"
-6. Criando o script "telegra_alert.sh"
+5. Validação do Topic_ID com o script \"validate_telegram_system.sh\"
+6. Criando o script \"telegra_alert.sh\"
 7. Considerações finais
 
 ## 1. Introdução
