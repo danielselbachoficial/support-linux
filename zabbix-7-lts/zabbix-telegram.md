@@ -220,8 +220,8 @@ exit 1
 
 
 
-
-
+validate_telegram_system.sh
+```bash
 #!/bin/bash
 
 # =============================================================================
@@ -465,3 +465,4 @@ fi
 
 # Executa o script principal
 main
+```
