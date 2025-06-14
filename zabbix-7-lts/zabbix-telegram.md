@@ -98,8 +98,8 @@ TOPIC_ID	Categoria	   Uso Recomendado
 ### 🔑 Configurações do Bot (Exemplo Fictício)
 ```bash
 BOT_TOKEN="6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q"  # Fictício
-CHAT_ID="-1001987654321"                                      # Fictício
-DEFAULT_THREAD_ID=6
+CHAT_ID="-1001987654321"                                    # Fictício
+DEFAULT_THREAD_ID=6                                         # Fictício
 ```
 
 Script telegram_alert.sh
