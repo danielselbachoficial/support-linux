@@ -122,7 +122,7 @@ O script utiliza TOPIC_IDs para organizar diferentes tipos de alertas em tópico
 ```bash
 BOT_TOKEN=\"6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q\"  # Fictício
 CHAT_ID=\"-1001987654321\"                                    # Fictício
-DEFAULT_THREAD_ID=6                                         # Fictício
+DEFAULT_THREAD_ID=6                                           # Fictício
 ```
 
 ---
