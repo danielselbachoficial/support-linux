@@ -12,7 +12,7 @@
 ## 1. Introdução
 Este manual fornece um guia completo e detalhado para configurar a integração entre o Zabbix e o Telegram, permitindo o envio automático de alertas de monitoramento diretamente para grupos específicos no Telegram, garantindo um monitoramento de infraestrutura 24/7 eficiente e confiável.
 
-🎯 Objetivo da Integração
+### 🎯 Objetivo da Integração
 A integração Zabbix-Telegram oferece:
 
 - ✅ Monitoramento contínuo 24/7 da infraestrutura
@@ -22,7 +22,7 @@ A integração Zabbix-Telegram oferece:
 - ✅ Sistema de fallback robusto garantindo entrega das mensagens
 - ✅ Alertas instantâneos para equipes de TI e DevOps
 
-📖 Escopo do Manual
+### 📖 Escopo do Manual
 Este manual foca exclusivamente na configuração do envio de mensagens do Zabbix para o Telegram para monitoramento 24/7, incluindo:
 - Configuração do Media Type no Zabbix
 - Criação de Actions personalizadas para diferentes cenários
@@ -32,6 +32,33 @@ Este manual foca exclusivamente na configuração do envio de mensagens do Zabbi
 
 Nota: Este manual não aborda a configuração do Zabbix Agent ou problemas de conectividade entre Zabbix Server e Agents, focando exclusivamente no sistema de alertas via Telegram.
 
+## 2. Pré-requisitos
+Antes de iniciar a configuração, certifique-se de que os seguintes requisitos estão atendidos:
+
+### 🔧 Requisitos Técnicos
+- Zabbix Server operacional (versão 6.0 ou superior recomendada)
+- Acesso SSH ao servidor Zabbix com privilégios sudo
+- Conectividade de rede do servidor Zabbix para a internet (acesso à API do Telegram)
+- Acesso administrativo ao Zabbix Frontend
+- Script de alerta Telegram (telegram_alert.sh) instalado e configurado
+
+### 🤖 Requisitos do Telegram
+- Bot do Telegram criado via [telegram.org]
+- Bot Token válido (exemplo fictício: 6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q)
+- Grupo/Canal do Telegram configurado para receber alertas
+- Chat ID do grupo (exemplo fictício: -1001987654321)
+- TOPIC_IDs configurados para organização de mensagens
+
+### 📁 Estrutura de Arquivos
+```bash
+/usr/lib/zabbix/alertscripts/telegram_alert.sh      # Script principal
+/var/log/zabbix/alertscripts/telegram.log           # Arquivo de logs
+/var/log/zabbix/alertscripts/                       # Diretório de logs
+```
+
+### ⚠️ Importante
+Os valores de Bot Token (6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q) e Chat ID (-1001987654321) utilizados neste manual são totalmente fictícios e servem apenas como exemplo. Substitua pelos valores reais do seu ambiente.
+
 Script telegram_alert.sh
 ```bash
 cat telegram_alert.sh
@@ -40,8 +67,8 @@ cat telegram_alert.sh
 # TOPIC_IDs Validados: 2, 4, 6, 76, 78
 
 # ==================== CONFIGURAÇÕES ====================
-BOT_TOKEN="fwfwefewf"
-CHAT_ID="wfewfwe"
+BOT_TOKEN="6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q"
+CHAT_ID="-1001987654321"
 DEFAULT_THREAD_ID=6
 LOG_FILE="/var/log/zabbix/alertscripts/telegram.log"
 SCRIPT_VERSION="FinalWorking-v1.0"
@@ -263,8 +290,8 @@ validate_telegram_system.sh
 # =============================================================================
 
 # Configurações do Bot (substitua pelos valores reais)
-BOT_TOKEN="wfewfewf"
-CHAT_ID="wfwefwef"
+BOT_TOKEN="6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q"
+CHAT_ID="-1001987654321"
 
 # Configurações de descoberta
 MIN_THREAD_ID=1
