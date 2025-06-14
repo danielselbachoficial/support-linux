@@ -5,8 +5,8 @@
 2. Pré-requisitos
 3. Visão Geral do Script de Alerta Telegram
 4. Configuração no Zabbix Frontend
-5. Validação do Topic_ID com o script "validate_telegram_system.sh" e ajustando as permissões
-6. Criando o script "telegra_alert.sh" e ajustando permissões
+5. Validação do Topic_ID com o script "validate_telegram_system.sh"
+6. Criando o script "telegra_alert.sh"
 7. Considerações finais
 
 ## 1. Introdução
@@ -292,7 +292,7 @@ Condição D: OU Nome do trigger contém "attack"
 
 🛡️ Monitoramento de segurança 24/7 ativo
 
-## 5. Validação do Topic_ID com o script "validate_telegram_system.sh" e ajustando as permissões
+## 5. Validação do Topic_ID com o script "validate_telegram_system.sh"
 
 
 validate_telegram_system.sh
@@ -551,7 +551,7 @@ main
 
 
 
-## 6. Criando o script "telegra_alert.sh" e ajustando permissões
+## 6. Criando o script "telegra_alert.sh"
 Script telegram_alert.sh
 ```bash
 cat telegram_alert.sh
