@@ -85,6 +85,8 @@ TOPIC_ID	Categoria	   Uso Recomendado
 76	        Operações    - Backups, manutenções, serviços
 78	        Atualizações - Configurações, software, patches
 
+*Nota: Estes TOPIC_IDs são exemplos e podem ser variados ou estendidos para atender a diferentes necessidades de supergrupos ou categorias específicas de monitoramento. Você pode criar novos TOPIC_IDs conforme a estrutura organizacional da sua infraestrutura.*
+
 Script telegram_alert.sh
 ```bash
 cat telegram_alert.sh
