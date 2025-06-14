@@ -34,7 +34,7 @@ Nota: Este manual não aborda a configuração do Zabbix Agent ou problemas de c
 
 Script telegram_alert.sh
 ```bash
-cat telegram_alert_final_working.sh
+cat telegram_alert.sh
 #!/bin/bash
 # Telegram Alert Script - Final Working Version
 # TOPIC_IDs Validados: 2, 4, 6, 76, 78
