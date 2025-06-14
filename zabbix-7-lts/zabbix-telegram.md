@@ -359,7 +359,9 @@ Marque todas as opções para monitoramento 24/7 completo:
 
 ## 5. Validação do Topic_ID com o script \"validate_telegram_system.sh\"
 Crie o script para validar o Topic_ID com o comando abaixo:
-* sudo nano validate_telegram_system.sh
+```bash
+sudo nano validate_telegram_system.sh
+```
 
 ```bash
 #!/bin/bash
@@ -610,6 +612,10 @@ main
 ---
 
 ## 6. Criando o script \"telegram_alert.sh\"
+Crie o script "telegram_alert.sh" para enviar os alertas para o Telegram com o comando abaixo:
+```bash
+sudo nano telegram_alert.sh
+```
 
 ```bash
 #!/bin/bash
@@ -823,3 +829,58 @@ fi
 log \"ERROR\" \"=== Todas as tentativas falharam ===\"
 exit 1
 ```
+
+
+### 🔧 Permissões Necessárias
+
+Certifique-se de que o script tenha as permissões corretas:
+```bash
+chmod +x /usr/lib/zabbix/alertscripts/telegram_alert.sh
+chmod +x /usr/lib/zabbix/alertscripts/validate_telegram_system.sh
+chown zabbix:zabbix /usr/lib/zabbix/alertscripts/telegram_alert.sh
+chown zabbix:zabbix /usr/lib/zabbix/alertscripts/validate_telegram_system.sh
+```
+
+### 📝 Logs e Monitoramento
+
+Os logs são armazenados em:
+```bash
+/var/log/zabbix/alertscripts/telegram.log
+```
+
+Para monitorar em tempo real:
+```bash
+tail -f /var/log/zabbix/alertscripts/telegram.log
+```
+
+### 🚨 Troubleshooting
+
+**Problema comum 1:** Mensagens não chegam
+- Verificar se o bot está no grupo
+- Validar CHAT_ID e BOT_TOKEN
+- Conferir logs do script
+
+**Problema comum 2:** TOPIC_ID inválido
+- Usar o script de validação
+- Verificar se o tópico existe no grupo
+- Usar TOPIC_ID padrão como fallback
+
+**Problema comum 3:** Formatação quebrada
+- O script possui sistema de fallback automático
+- Verificar logs para identificar o problema
+- Testar com mensagens simples primeiro
+
+---
+
+## 7. Considerações finais
+
+### ✅ Checklist de Validação
+
+- [ ] Bot criado e token obtido
+- [ ] Grupo/canal configurado
+- [ ] TOPIC_IDs validados com script
+- [ ] Media Type configurado no Zabbix
+- [ ] Actions criadas e testadas
+- [ ] Logs funcionando corretamente
+- [ ] Sistema de fallback testado
+- [ ] Monitoramento 24/7 ativo
