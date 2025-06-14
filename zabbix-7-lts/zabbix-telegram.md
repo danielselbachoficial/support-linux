@@ -55,7 +55,7 @@ Antes de iniciar a configuração, certifique-se de que os seguintes requisitos 
 
 ### 🤖 Requisitos do Telegram
 
-- Bot do Telegram criado via [telegram.org](https://telegram.org){target=\"_blank\"}
+- Bot do Telegram criado via [telegram.org](https://telegram.org)
 - Bot Token válido (exemplo fictício: `6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q`)
 - Grupo/Canal do Telegram configurado para receber alertas
 - Chat ID do grupo (exemplo fictício: `-1001987654321`)
