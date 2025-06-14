@@ -30,7 +30,7 @@ Este manual foca exclusivamente na configuração do envio de mensagens do Zabbi
 - Teste e validação completa do sistema
 - Monitoramento contínuo e troubleshooting
 
-Nota: Este manual não aborda a configuração do Zabbix Agent ou problemas de conectividade entre Zabbix Server e Agents, focando exclusivamente no sistema de alertas via Telegram.
+*Nota: Este manual não aborda a configuração do Zabbix Agent ou problemas de conectividade entre Zabbix Server e Agents, focando exclusivamente no sistema de alertas via Telegram.*
 
 ## 2. Pré-requisitos
 Antes de iniciar a configuração, certifique-se de que os seguintes requisitos estão atendidos:
@@ -57,7 +57,7 @@ Antes de iniciar a configuração, certifique-se de que os seguintes requisitos 
 ```
 
 ### ⚠️ Importante
-Os valores de Bot Token (6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q) e Chat ID (-1001987654321) utilizados neste manual são totalmente fictícios e servem apenas como exemplo. Substitua pelos valores reais do seu ambiente.
+*Os valores de Bot Token (6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q) e Chat ID (-1001987654321) utilizados neste manual são totalmente fictícios e servem apenas como exemplo. Substitua pelos valores reais do seu ambiente.*
 
 ## 3. Visão Geral do Script de Alerta Telegram
 
@@ -75,7 +75,7 @@ O script telegram_alert.sh é responsável por:
 /usr/lib/zabbix/alertscripts/telegram_alert.sh
 ```
 
-🎯 Exemplos de TOPIC_IDs
+### 🎯 Exemplos de TOPIC_IDs
 O script utiliza TOPIC_IDs para organizar diferentes tipos de alertas em tópicos específicos, permitindo uma gestão eficiente do monitoramento 24/7:
 
 TOPIC_ID	Categoria	   Uso Recomendado
@@ -86,6 +86,21 @@ TOPIC_ID	Categoria	   Uso Recomendado
 78	        Atualizações - Configurações, software, patches
 
 *Nota: Estes TOPIC_IDs são exemplos e podem ser variados ou estendidos para atender a diferentes necessidades de supergrupos ou categorias específicas de monitoramento. Você pode criar novos TOPIC_IDs conforme a estrutura organizacional da sua infraestrutura.*
+
+### 🔧 Características Técnicas
+- ✅ Sistema de fallback triplo (formatação básica → texto simples → mensagem de emergência)
+- ✅ Logs detalhados para debug e monitoramento contínuo
+- ✅ Validação de TOPIC_IDs com categoria padrão
+- ✅ Escape de caracteres para evitar problemas de formatação
+- ✅ Timeout e retry automáticos para requisições
+- ✅ Monitoramento 24/7 sem interrupções
+
+### 🔑 Configurações do Bot (Exemplo Fictício)
+```bash
+BOT_TOKEN="6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q"  # Fictício
+CHAT_ID="-1001987654321"                                      # Fictício
+DEFAULT_THREAD_ID=6
+```
 
 Script telegram_alert.sh
 ```bash
