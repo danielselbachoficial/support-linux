@@ -1,5 +1,13 @@
+# Manual de Configuração: Alertas Zabbix via Telegram
 
-
+📋 Índice
+1. Introdução
+2. Pré-requisitos
+3. Visão Geral do Script de Alerta Telegram
+4. Configuração no Zabbix Frontend
+5. Validação do Topic_ID.
+6. Criando os scripts e ajustando permissões.
+7. Considerações finais.
 
 Script telegram_alert.sh
 ```bash
