@@ -15,21 +15,21 @@ Este manual fornece um guia completo e detalhado para configurar a integração 
 🎯 Objetivo da Integração
 A integração Zabbix-Telegram oferece:
 
-✅ Monitoramento contínuo 24/7 da infraestrutura
-✅ Notificações em tempo real de problemas e recuperações
-✅ Organização por tópicos usando TOPIC_IDs específicos
-✅ Formatação rica com emojis e estrutura clara
-✅ Sistema de fallback robusto garantindo entrega das mensagens
-✅ Alertas instantâneos para equipes de TI e DevOps
+- ✅ Monitoramento contínuo 24/7 da infraestrutura
+- ✅ Notificações em tempo real de problemas e recuperações
+- ✅ Organização por tópicos usando TOPIC_IDs específicos
+- ✅ Formatação rica com emojis e estrutura clara
+- ✅ Sistema de fallback robusto garantindo entrega das mensagens
+- ✅ Alertas instantâneos para equipes de TI e DevOps
 
 📖 Escopo do Manual
 Este manual foca exclusivamente na configuração do envio de mensagens do Zabbix para o Telegram para monitoramento 24/7, incluindo:
+- Configuração do Media Type no Zabbix
+- Criação de Actions personalizadas para diferentes cenários
+- Sistema de roteamento por TOPIC_IDs para organização
+- Teste e validação completa do sistema
+- Monitoramento contínuo e troubleshooting
 
-Configuração do Media Type no Zabbix
-Criação de Actions personalizadas para diferentes cenários
-Sistema de roteamento por TOPIC_IDs para organização
-Teste e validação completa do sistema
-Monitoramento contínuo e troubleshooting
 Nota: Este manual não aborda a configuração do Zabbix Agent ou problemas de conectividade entre Zabbix Server e Agents, focando exclusivamente no sistema de alertas via Telegram.
 
 Script telegram_alert.sh
