@@ -1,3 +1,4 @@
+Pergunta: ```markdown
 # Manual de Configuração: Alertas Zabbix via Telegram
 
 📋 Índice
@@ -15,20 +16,21 @@ Este manual fornece um guia completo e detalhado para configurar a integração 
 ### 🎯 Objetivo da Integração
 A integração Zabbix-Telegram oferece:
 
-- ✅ Monitoramento contínuo 24/7 da infraestrutura
-- ✅ Notificações em tempo real de problemas e recuperações
-- ✅ Organização por tópicos usando TOPIC_IDs específicos
-- ✅ Formatação rica com emojis e estrutura clara
-- ✅ Sistema de fallback robusto garantindo entrega das mensagens
-- ✅ Alertas instantâneos para equipes de TI e DevOps
+*   ✅ Monitoramento contínuo 24/7 da infraestrutura
+*   ✅ Notificações em tempo real de problemas e recuperações
+*   ✅ Organização por tópicos usando TOPIC_IDs específicos
+*   ✅ Formatação rica com emojis e estrutura clara
+*   ✅ Sistema de fallback robusto garantindo entrega das mensagens
+*   ✅ Alertas instantâneos para equipes de TI e DevOps
 
 ### 📖 Escopo do Manual
 Este manual foca exclusivamente na configuração do envio de mensagens do Zabbix para o Telegram para monitoramento 24/7, incluindo:
-- Configuração do Media Type no Zabbix
-- Criação de Actions personalizadas para diferentes cenários
-- Sistema de roteamento por TOPIC_IDs para organização
-- Teste e validação completa do sistema
-- Monitoramento contínuo e troubleshooting
+
+*   Configuração do Media Type no Zabbix
+*   Criação de Actions personalizadas para diferentes cenários
+*   Sistema de roteamento por TOPIC_IDs para organização
+*   Teste e validação completa do sistema
+*   Monitoramento contínuo e troubleshooting
 
 *Nota: Este manual não aborda a configuração do Zabbix Agent ou problemas de conectividade entre Zabbix Server e Agents, focando exclusivamente no sistema de alertas via Telegram.*
 
@@ -36,18 +38,18 @@ Este manual foca exclusivamente na configuração do envio de mensagens do Zabbi
 Antes de iniciar a configuração, certifique-se de que os seguintes requisitos estão atendidos:
 
 ### 🔧 Requisitos Técnicos
-- Zabbix Server operacional (versão 6.0 ou superior recomendada)
-- Acesso SSH ao servidor Zabbix com privilégios sudo
-- Conectividade de rede do servidor Zabbix para a internet (acesso à API do Telegram)
-- Acesso administrativo ao Zabbix Frontend
-- Script de alerta Telegram (telegram_alert.sh) instalado e configurado
+*   Zabbix Server operacional (versão 6.0 ou superior recomendada)
+*   Acesso SSH ao servidor Zabbix com privilégios sudo
+*   Conectividade de rede do servidor Zabbix para a internet (acesso à API do Telegram)
+*   Acesso administrativo ao Zabbix Frontend
+*   Script de alerta Telegram (telegram_alert.sh) instalado e configurado
 
 ### 🤖 Requisitos do Telegram
-- Bot do Telegram criado via [telegram.org]
-- Bot Token válido (exemplo fictício: 6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q)
-- Grupo/Canal do Telegram configurado para receber alertas
-- Chat ID do grupo (exemplo fictício: -1001987654321)
-- TOPIC_IDs configurados para organização de mensagens
+*   Bot do Telegram criado via [telegram.org](https://telegram.org)
+*   Bot Token válido (exemplo fictício: 6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q)
+*   Grupo/Canal do Telegram configurado para receber alertas
+*   Chat ID do grupo (exemplo fictício: -1001987654321)
+*   TOPIC_IDs configurados para organização de mensagens
 
 ### 📁 Estrutura de Arquivos
 ```bash
@@ -62,13 +64,14 @@ Antes de iniciar a configuração, certifique-se de que os seguintes requisitos 
 ## 3. Visão Geral do Script de Alerta Telegram
 
 ### 📄 Finalidade do Script
-O script telegram_alert.sh é responsável por:
-- Processar alertas enviados pelo Zabbix em tempo real
-- Extrair TOPIC_IDs dos assuntos dos alertas para roteamento
-- Formatar mensagens com emojis e estrutura clara para melhor visualização
-- Rotear alertas para tópicos específicos no Telegram
-- Implementar sistema de fallback para garantir entrega 24/7
-- Registrar logs detalhados para monitoramento e troubleshooting
+O script `telegram_alert.sh` é responsável por:
+
+*   Processar alertas enviados pelo Zabbix em tempo real
+*   Extrair TOPIC_IDs dos assuntos dos alertas para roteamento
+*   Formatar mensagens com emojis e estrutura clara para melhor visualização
+*   Rotear alertas para tópicos específicos no Telegram
+*   Implementar sistema de fallback para garantir entrega 24/7
+*   Registrar logs detalhados para monitoramento e troubleshooting
 
 ### 📍 Localização do Script
 ```bash
@@ -78,28 +81,29 @@ O script telegram_alert.sh é responsável por:
 ### 🎯 Exemplos de TOPIC_IDs
 O script utiliza TOPIC_IDs para organizar diferentes tipos de alertas em tópicos específicos, permitindo uma gestão eficiente do monitoramento 24/7:
 
-TOPIC_ID	Categoria	   Uso Recomendado
-2	        Recuperação  - Brute Force	Ataques de segurança controlados
-4	        Recuperação  - Incidentes Zabbix	Problemas do sistema de monitoramento
-6	        Recuperação  - Borda Clientes (Padrão)	Conectividade e serviços gerais
-76	        Operações    - Backups, manutenções, serviços
-78	        Atualizações - Configurações, software, patches
+| TOPIC_ID | Categoria                                                                        | Uso Recomendado                          |
+|----------|----------------------------------------------------------------------------------|------------------------------------------|
+| 2        | Recuperação - Brute Force                                                        | Ataques de segurança controlados         | 
+| 4        | Recuperação - Incidentes Zabbix                                                  | Problemas do sistema de monitoramento    |
+| 6        | Recuperação - Borda Clientes (Padrão)                                            | Conectividade e serviços gerais          |
+| 76       | Operações                                                                        | Backups, manutenções, serviços           |
+| 78       | Atualizações                                                                     | Configurações, software, patches         |
 
 *Nota: Estes TOPIC_IDs são exemplos e podem ser variados ou estendidos para atender a diferentes necessidades de supergrupos ou categorias específicas de monitoramento. Você pode criar novos TOPIC_IDs conforme a estrutura organizacional da sua infraestrutura.*
 
 ### 🔧 Características Técnicas
-- ✅ Sistema de fallback triplo (formatação básica → texto simples → mensagem de emergência)
-- ✅ Logs detalhados para debug e monitoramento contínuo
-- ✅ Validação de TOPIC_IDs com categoria padrão
-- ✅ Escape de caracteres para evitar problemas de formatação
-- ✅ Timeout e retry automáticos para requisições
-- ✅ Monitoramento 24/7 sem interrupções
+*   ✅ Sistema de fallback triplo (formatação básica → texto simples → mensagem de emergência)
+*   ✅ Logs detalhados para debug e monitoramento contínuo
+*   ✅ Validação de TOPIC_IDs com categoria padrão
+*   ✅ Escape de caracteres para evitar problemas de formatação
+*   ✅ Timeout e retry automáticos para requisições
+*   ✅ Monitoramento 24/7 sem interrupções
 
 ### 🔑 Configurações do Bot (Exemplo Fictício)
 ```bash
-BOT_TOKEN="6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q"  # Fictício
-CHAT_ID="-1001987654321"                                    # Fictício
-DEFAULT_THREAD_ID=6                                         # Fictício
+BOT_TOKEN=\"6891234567:AAFzBqC8D9E0F1G2H3I4J5K6L7M8N9O0P1Q\"  # Fictício
+CHAT_ID=\"-1001987654321\"                                    # Fictício
+DEFAULT_THREAD_ID=6                                           # Fictício
 ```
 
 ## 4. Configuração no Zabbix Frontend
