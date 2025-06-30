@@ -80,8 +80,8 @@ Agora, você criará o arquivo de configuração para a sua interface WireGuard.
 
     ```ini
     # /etc/wireguard/lab_vpn.conf
-    # Configuração para a VPN de Produção da AFSIM TECH
-    # Cliente: Daniel Selbach (máquina Debian)
+    # Configuração para a VPN de Lab
+    # Cliente: Lab VPN
     # Propósito: Acesso seguro à rede de produção (ex: 10.0.0.0/24) e ao servidor de arquivos (ex: 10.0.1.0/24)
 
     [Interface]
@@ -97,7 +97,7 @@ Agora, você criará o arquivo de configuração para a sua interface WireGuard.
     [Peer]
     # Chave Pública do SERVIDOR WireGuard (fornecida pelo administrador do servidor)
     PublicKey = <CHAVE_PUBLICA_DO_SERVIDOR_AQUI>
-    # Endereço IP público ou nome de host do servidor WireGuard e a porta (ex: vpn.afsimtech.com:51820)
+    # Endereço IP público ou nome de host do servidor WireGuard e a porta (ex: vpn.lab:51820)
     Endpoint = <IP_OU_HOSTNAME_DO_SERVIDOR_VPN>:<PORTA>
     # Preshared Key (PSK) para uma camada extra de segurança.
     # DEVE ser a mesma configurada no servidor para o seu peer.
