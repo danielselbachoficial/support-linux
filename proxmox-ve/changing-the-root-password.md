@@ -2,7 +2,7 @@
 
 **Problema:** Perdeu a senha `root` de uma Máquina Virtual (VM) Linux rodando no Proxmox? `pct enter` não funciona para VMs, e você precisa de acesso.
 
-**Solução:** Manipular o boot da VM via GRUB. É um processo direto, sem firulas.
+**Solução:** Manipular o boot da VM via GRUB.
 
 ---
 
