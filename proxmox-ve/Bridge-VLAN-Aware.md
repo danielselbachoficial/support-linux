@@ -19,7 +19,7 @@ iface eno1 inet manual
 
 # Bridge principal (vmbr0) configurada como VLAN-aware
 # Esta bridge gerenciará o tráfego de todas as VLANs especificadas.
-# O tráfego para as VLANs (e suas sub-interfaces, como vmbr0.11)
+# O tráfego para as VLANs (e suas sub-interfaces, como vmbr0.20)
 # será automaticamente taggeado/destaggeado pela bridge.
 auto vmbr0
 iface vmbr0 inet manual
@@ -28,7 +28,7 @@ iface vmbr0 inet manual
   bridge-fd 0                 # Forward Delay em zero (sem atraso na transição de estados)
   bridge-vlan-aware yes       # Habilita a funcionalidade VLAN-aware na bridge
   # bridge-vids: Especifique as IDs de VLAN que esta bridge e as VMs/LXC usarão.
-  # A VLAN de gerenciamento (11) e as VLANs de serviço (200-206) são exemplos.
+  # A VLAN de gerenciamento (20) e as VLANs de serviço (300-306) são exemplos.
   bridge-vids 20 300-306
   mtu 1500                    # Maximum Transmission Unit
 
@@ -38,7 +38,7 @@ iface vmbr0 inet manual
 auto vmbr0.20
 iface vmbr0.20 inet static
   address 192.168.20.2/29       # ENDEREÇO IP DO PROXMOX NESSA VLAN
-  gateway 192.168.20.1          # GATEWAY DA VLAN 11 (geralmente o firewall/roteador)
+  gateway 192.168.20.1          # GATEWAY DA VLAN 20 (geralmente o firewall/roteador)
   nameservers 192.168.20.1      # SERVIDORES DNS PARA O PROXMOX
   mtu 1500
 ```
@@ -60,7 +60,7 @@ iface vmbr0.20 inet static
 
 1.  **Hardware:** Um servidor com Proxmox VE instalado e pelo menos uma interface de rede física.
 2.  **Rede:** Um switch de rede gerenciável que suporte VLANs.
-3.  **Configuração de Switch/Firewall:** A porta do switch à qual o servidor Proxmox está conectado deve ser configurada como uma porta `trunk` (ou taggeada) para as VLANs especificadas em `bridge-vids` (ex: 11, 200-206). Seu firewall/roteador (ex: MikroTik) deve estar configurado para lidar com essas VLANs e atuar como gateway para elas.
+3.  **Configuração de Switch/Firewall:** A porta do switch à qual o servidor Proxmox está conectado deve ser configurada como uma porta `trunk` (ou taggeada) para as VLANs especificadas em `bridge-vids` (ex: 20, 300-306). Seu firewall/roteador (ex: MikroTik) deve estar configurado para lidar com essas VLANs e atuar como gateway para elas.
 
 ## Como Usar
 
@@ -75,7 +75,7 @@ iface vmbr0.20 inet static
 3.  **Cole e Ajuste:** Cole o conteúdo acima e **ajuste os seguintes valores** para o seu ambiente:
     *   Nome da interface física (ex: `eno1`).
     *   As IDs de VLAN em `bridge-vids`.
-    *   O endereço IP, gateway e nameservers para a VLAN de gerenciamento (`vmbr0.11`).
+    *   O endereço IP, gateway e nameservers para a VLAN de gerenciamento (`vmbr0.20`).
 4.  **Aplique as Alterações:**
     *   Para aplicar as mudanças **sem reiniciar o servidor** (se não houver erros na configuração):
         ```bash
@@ -86,7 +86,7 @@ iface vmbr0.20 inet static
         reboot
         ```
         **Atenção:** Uma configuração incorreta pode resultar na perda de conectividade com o servidor. Tenha acesso físico ou acesso via KVM/iLO/IPMI para recuperação em caso de problemas.
-5.  **Teste a Conectividade:** Após a aplicação das alterações (ou reboot), verifique se o host Proxmox está acessível pelo novo endereço IP de gerenciamento na VLAN 11.
+5.  **Teste a Conectividade:** Após a aplicação das alterações (ou reboot), verifique se o host Proxmox está acessível pelo novo endereço IP de gerenciamento na VLAN 20.
 
 ## Configuração de VMs e LXC
 
