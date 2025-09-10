@@ -53,7 +53,3 @@
         ```bash
         reboot -f
         ```
-
----
-
-**Conclusão:** A senha foi resetada. Se isso não resolver, o problema não era a senha. Agora, use o que aprendeu.
