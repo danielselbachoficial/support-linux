@@ -3,7 +3,7 @@
 # ====================================================================================
 # Script para Instalação e Configuração Automatizada do Zabbix Agent 2
 # Versão: 1.0
-# Compatibilidade: Debian 12 (Bookworm) para Zabbix 7.0 LTS
+# Compatibilidade: Debian 12 (Bookworm) e Ubuntu Server 24.04 (Noble Numbat) para Zabbix 7.0 LTS
 # ====================================================================================
 
 # Cores para uma saída mais legível
