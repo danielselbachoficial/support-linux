@@ -28,7 +28,7 @@ O objetivo é simplificar e padronizar o processo de deployment, reduzindo a cha
 Conecte-se ao terminal do servidor que você deseja monitorar e baixe o script.
 
 ```bash
-wget https://raw.githubusercontent.com/danielselbachoficial/support-linux/main/zabbix-7-lts/install_zabbix_agent2.sh
+wget https://raw.githubusercontent.com/danielselbachoficial/support-linux/main/zabbix-7-lts/scripts/install_zabbix_agent2.sh
 ```
 
 ### Passo 2: Dar Permissão de Execução
