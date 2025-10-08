@@ -30,7 +30,6 @@ Conecte-se ao terminal do servidor que você deseja monitorar e baixe o script.
 ```bash
 wget https://raw.githubusercontent.com/danielselbachoficial/support-linux/main/zabbix-7-lts/install_zabbix_agent2.sh
 ```
-> **Nota:** Substitua o URL acima pelo link "Raw" do arquivo `install_zabbix_agent2.sh` no seu próprio repositório do GitHub.
 
 ### Passo 2: Dar Permissão de Execução
 
