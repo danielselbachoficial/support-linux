@@ -28,16 +28,16 @@ O objetivo é simplificar e padronizar o processo de deployment, reduzindo a cha
 Conecte-se ao terminal do servidor que você deseja monitorar e baixe o script.
 
 ```bash
-wget https://raw.githubusercontent.com/danielselbachoficial/support-linux/main/zabbix-7-lts/instalar_zabbix_agent.sh
+wget https://raw.githubusercontent.com/danielselbachoficial/support-linux/main/zabbix-7-lts/install_zabbix_agent2.sh
 ```
-> **Nota:** Substitua o URL acima pelo link "Raw" do arquivo `instalar_zabbix_agent.sh` no seu próprio repositório do GitHub.
+> **Nota:** Substitua o URL acima pelo link "Raw" do arquivo `install_zabbix_agent2.sh` no seu próprio repositório do GitHub.
 
 ### Passo 2: Dar Permissão de Execução
 
 Torne o script executável.
 
 ```bash
-chmod +x instalar_zabbix_agent.sh
+chmod +x install_zabbix_agent2.sh
 ```
 
 ### Passo 3: Executar o Script
@@ -45,7 +45,7 @@ chmod +x instalar_zabbix_agent.sh
 Execute o script com `sudo`. Ele irá guiar você pelo processo.
 
 ```bash
-sudo ./instalar_zabbix_agent.sh
+sudo ./install_zabbix_agent2.sh
 ```
 
 ### Exemplo de Execução
@@ -99,7 +99,7 @@ Após alguns minutos, o ícone "ZBX" na coluna *Availability* deverá ficar verd
 ## Código-Fonte do Script
 
 <details>
-<summary>Clique para expandir e ver o código do script `instalar_zabbix_agent.sh`</summary>
+<summary>Clique para expandir e ver o código do script `install_zabbix_agent2.sh`</summary>
 
 ```bash
 #!/bin/bash
