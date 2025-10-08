@@ -28,7 +28,7 @@ O objetivo é simplificar e padronizar o processo de deployment, reduzindo a cha
 Conecte-se ao terminal do servidor que você deseja monitorar e baixe o script.
 
 ```bash
-wget [https://raw.githubusercontent.com/danielselbachoficial/support-linux/refs/heads/main/zabbix-7-lts/install_zabbix_agent2.md](https://raw.githubusercontent.com/danielselbachoficial/support-linux/refs/heads/main/zabbix-7-lts/install_zabbix_agent2.md)
+wget https://raw.githubusercontent.com/danielselbachoficial/support-linux/main/zabbix-7-lts/instalar_zabbix_agent.sh
 ```
 > **Nota:** Substitua o URL acima pelo link "Raw" do arquivo `instalar_zabbix_agent.sh` no seu próprio repositório do GitHub.
 
