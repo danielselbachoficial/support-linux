@@ -2,7 +2,7 @@
 
 Este documento descreve a solução para um problema comum em distribuições Linux recentes que utilizam `systemd`, onde a alteração da porta no arquivo de configuração do SSH (`/etc/ssh/sshd_config`) não surte efeito após reiniciar o serviço.
 
-## O Problema
+## Problema
 
 Ao alterar a diretiva `Port` no arquivo `/etc/ssh/sshd_config` para uma nova porta (por exemplo, `Port 25000`) e reiniciar o serviço SSH com `sudo systemctl restart ssh`, a nova porta não é utilizada. Ao verificar as portas em escuta com comandos como `netstat -putanl` ou `ss -tuln`, o sistema continua escutando apenas na porta padrão 22, impedindo o acesso remoto através da nova porta configurada.
 
