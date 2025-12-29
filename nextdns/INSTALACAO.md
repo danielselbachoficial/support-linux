@@ -1,21 +1,15 @@
-# Guia de Instalação e Configuração Técnica
+# 🛠 Guia de Instalação e Configuração - NextDNS
 
-Utilize o **ID de Perfil** gerado no seu painel do NextDNS para as configurações abaixo.
+Este guia detalha os diferentes métodos de instalação do NextDNS, desde o cliente oficial até configurações manuais em resolvedores de terceiros.
 
-## 🛠 Métodos de Instalação
+> **Importante:** Substitua `554499` (ou `SEU_ID`) pelo seu ID de configuração pessoal encontrado no painel do NextDNS.
 
-### Opção A: Cliente CLI (Recomendado)
-Oferece cache local e identificação de nomes de dispositivos na rede.
+---
 
-1. **Instalar:**
-   ```
-   sh -c "$(curl -sL https://nextdns.io/install)"
-   
-2. **Otimizar Performance:**
-```
-sudo nextdns config set -cache-size 10MB
-sudo nextdns config set -cache-max-age 10m
-sudo nextdns config set -report-client-info true
-sudo nextdns restart
+## 1. Cliente CLI (Recomendado)
+O cliente de linha de comando é a forma mais robusta de usar o NextDNS no Linux, pois oferece cache local e identificação automática de dispositivos.
 
-### Opção B: Systemd-Resolved (Nativo do Ubuntu)
+### Instalação
+Execute o comando oficial:
+```bash
+sh -c "$(curl -sL [https://nextdns.io/install](https://nextdns.io/install))"
