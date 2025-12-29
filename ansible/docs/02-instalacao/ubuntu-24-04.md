@@ -222,3 +222,11 @@ source ~/.bashrc
 # Verificar
 ansible --version
 ```
+
+### Comparação de Métodos
+| Método                    | Vantagens                         | Desvantagens           |   
+|---------------------------|-----------------------------------|------------------------|
+| PPA                       | Fácil, integrado ao sistema       | Apenas Ubuntu
+| pip                       | Versão mais recente, estável      | Apenas Ubuntu/Debian
+| apt                       | Versão mais recente               | Requer gerenciar PATH
+
