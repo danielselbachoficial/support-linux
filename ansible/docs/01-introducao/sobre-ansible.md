@@ -1,1 +1,38 @@
+# Sobre o Ansible
 
+O **Ansible** é uma ferramenta de automação de TI open-source que revolucionou a forma como gerenciamos infraestrutura.
+
+## O que é o Ansible?
+
+Ansible é uma plataforma de automação que permite:
+
+- **Gerenciamento de Configuração**: Manter servidores no estado desejado
+- **Provisionamento de Infraestrutura**: Criar e configurar recursos automaticamente
+- **Orquestração de Aplicações**: Coordenar deploys complexos
+- **Automação de Tarefas**: Eliminar trabalho manual repetitivo
+
+## Características Principais
+
+### 1. Agentless (Sem Agentes)
+
+Diferente de outras ferramentas, o Ansible não requer instalação de agentes nos servidores gerenciados.
+
+┌─────────────────┐         SSH         ┌─────────────────┐
+│  Nó de Controle │ ─────────────────>  │  Servidor 1     │
+│  (Ansible)      │                     │  (Sem agente)   │
+└─────────────────┘                     └─────────────────┘
+**Vantagens**:
+- Menos overhead nos servidores
+- Sem necessidade de manutenção de agentes
+- Mais seguro (usa SSH nativo)
+
+### 2. Idempotente
+
+Executar a mesma tarefa múltiplas vezes produz o mesmo resultado.
+```yaml
+# Este código pode ser executado 100 vezes
+# O resultado será sempre o mesmo
+- name: Garantir que Nginx está instalado
+  apt:
+    name: nginx
+    state: present
