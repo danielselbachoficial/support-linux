@@ -150,3 +150,184 @@ Conhecimentos que ajudam, mas não são obrigatórios:
     -   Gerenciamento de pacotes (apt, yum)
     -   Serviços e systemd
     -   Configuração de servidores
+
+## Checklist de Pré-requisitos
+
+Antes de prosseguir, verifique:
+
+### Nó de Controle
+
+-   Sistema operacional compatível instalado
+-   Python 3.8+ instalado
+-   Acesso sudo/root disponível
+-   Conexão de rede estável
+-   Espaço em disco suficiente (mínimo 1 GB)
+
+### Nós Gerenciados
+
+-   SSH habilitado e acessível
+-   Python instalado
+-   Usuário com permissões adequadas criado
+-   Firewall permite conexões SSH
+-   Conectividade de rede com o nó de controle
+
+### Conhecimentos
+
+-   Confortável com linha de comando Linux
+-   Entende conceitos básicos de SSH
+-   Sabe editar arquivos de texto no terminal
+-   Conhece comandos básicos de administração
+
+## Preparando o Ambiente
+
+### 1. Atualizar o sistema
+
+No nó de controle (Ubuntu):
+```
+sudo apt update && sudo apt upgrade -y
+```
+
+```
+sudo apt update && sudo apt upgrade -y
+```
+
+### 2. Instalar Python (se necessário)
+
+```
+sudo apt install python3 python3-pip -y
+```
+
+```
+sudo apt install python3 python3-pip -y
+```
+
+### 3. Configurar SSH
+
+Gerar chave SSH (se não tiver):
+
+```
+ssh-keygen -t ed25519 -C "seu-email@example.com"
+```
+
+```
+ssh-keygen -t ed25519 -C "seu-email@example.com"
+```
+
+### 4. Testar conectividade
+
+Testar SSH para um servidor:
+
+```
+ssh usuario@ip-do-servidor
+```
+
+```
+ssh usuario@ip-do-servidor
+```
+
+## Ambientes de Teste
+
+Se você não tem servidores físicos, pode usar:
+
+### Opção 1: Máquinas Virtuais Locais
+
+-   VirtualBox: Gratuito, fácil de usar
+-   VMware Workstation: Mais recursos
+-   KVM/QEMU: Para Linux
+
+### Opção 2: Containers Docker
+
+```
+# Criar container para testes
+docker run -d --name ansible-test \
+  -p 2222:22 \
+  ubuntu:24.04
+```
+
+```
+# Criar container para testes
+docker run -d --name ansible-test \
+  -p 2222:22 \
+  ubuntu:24.04
+```
+
+### Opção 3: Cloud Providers
+
+-   AWS Free Tier: 12 meses grátis
+-   Google Cloud: $300 em créditos
+-   DigitalOcean: $200 em créditos (com cupom)
+-   Azure: $200 em créditos
+
+### Opção 4: Vagrant
+
+Vagrantfile:
+
+```
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/jammy64"
+  
+  config.vm.define "server1" do |server|
+    server.vm.hostname = "server1"
+    server.vm.network "private_network", ip: "192.168.56.10"
+  end
+end
+```
+
+```
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/jammy64"
+  
+  config.vm.define "server1" do |server|
+    server.vm.hostname = "server1"
+    server.vm.network "private_network", ip: "192.168.56.10"
+  end
+end
+```
+
+Executar:
+
+```
+vagrant up
+```
+
+## Verificação Final
+
+Execute estes comandos para verificar se está tudo pronto:
+
+```
+# Verificar Python
+python3 --version
+
+# Verificar SSH
+ssh -V
+
+# Verificar conectividade (substitua pelo seu servidor)
+ping -c 3 192.168.1.100
+
+# Verificar acesso SSH (substitua pelo seu servidor)
+ssh -o ConnectTimeout=5 usuario@192.168.1.100 "echo 'SSH OK'"
+```
+
+```
+# Verificar Python
+python3 --version
+
+# Verificar SSH
+ssh -V
+
+# Verificar conectividade (substitua pelo seu servidor)
+ping -c 3 192.168.1.100
+
+# Verificar acesso SSH (substitua pelo seu servidor)
+ssh -o ConnectTimeout=5 usuario@192.168.1.100 "echo 'SSH OK'"
+```
+
+Se todos os comandos funcionarem, você está pronto para instalar o Ansible!
+
+----------
+
+## Próximos Passos
+
+Agora que você verificou todos os pré-requisitos, vamos instalar o Ansible:
+
+➡️ [Instalação no Ubuntu 24.04](/02-instalacao-ubuntu.md)
