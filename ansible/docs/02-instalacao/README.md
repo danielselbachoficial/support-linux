@@ -40,3 +40,67 @@ pip3 install -e
 | PPA Oficial               | Versão mais recente, estável      | Apenas Ubuntu/Debian
 | pip                       | Versão mais recente, flexível     | Requer gerenciar dependências
 | Código-fonte              | Versão de desenvolvimento         | Instável, complexo
+
+### Recomendação
+
+
+Para a maioria dos usuários, recomendamos:
+
+- Ubuntu/Debian: Use o PPA oficial (mais recente e estável)
+- CentOS/RHEL: Use EPEL + DNF/YUM
+- macOS: Use Homebrew
+- Outros: Use pip
+
+
+
+### Versões do Ansible
+
+Ansible Core vs Ansible:
+- ansible-core: Pacote mínimo com funcionalidades essenciais
+- ansible: Pacote completo com collections incluídas
+
+
+
+
+#### Instalar apenas o core
+```bash
+pip3 install ansible-core
+```
+
+
+#### Instalar pacote completo
+```bash
+pip3 install ansible
+```
+
+
+
+### Verificação Pós-Instalação
+
+Após instalar, sempre verifique:
+
+```bash
+### Versão do Ansible
+ansible --version
+```
+
+
+#### Localização do executável
+```
+which ansible
+```
+
+
+#### Módulos disponíveis
+```bash
+ansible-doc -l | wc -l
+```
+
+
+### Próximos Passos
+
+Escolha seu sistema operacional e siga o guia de instalação:
+
+- ➡️ Ubuntu 24.04 (Recomendado para iniciantes)
+- ➡️ Outras Distribuições
+
