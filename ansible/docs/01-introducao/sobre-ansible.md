@@ -170,19 +170,13 @@ graph TD
 5. Nós Gerenciados: Servidores que serão automatizados
 
 ## Comparação com Outras Ferramentas
-| Característica | Ansible | Puppet | Chef | SaltStack |
-
-|----------------|---------|--------|------|-----------|
-
-| Agentless | ✅ Sim | ❌ Não | ❌ Não | ⚠️ Opcional |
-
-| Linguagem | YAML | Ruby DSL | Ruby | YAML/Python |
-
-| Curva de Aprendizado | Baixa | Alta | Alta | Média |
-
-| Comunicação | SSH | SSL | SSL | ZeroMQ |
-
-| Idempotência | ✅ Sim | ✅ Sim | ✅ Sim | ✅ Sim |
+| Característica       | Ansible | Puppet   | Chef    | SaltStack   |
+|----------------------|---------|----------|---------|-------------|
+| Agentless            | ✅ Sim  | ❌ Não   | ❌ Não  | ⚠️ Opcional |
+| Linguagem            | YAML    | Ruby DSL | Ruby    | YAML/Python |
+| Curva de Aprendizado | Baixa   | Baixa    | Alta    | Média       |
+| Comunicação          | SSH     | SSL      | SSL     | ZeroMQ      |
+| Idempotência         | ✅ Sim  | ✅ Sim   | ✅ Sim  | ✅ Sim      |
 
 ## Quando usar Ansible?
 
