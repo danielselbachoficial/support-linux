@@ -237,7 +237,7 @@ all:
 
 ---
 ## Organizando Inventários de projetos com boas práticas
-
+```ini
 Para projetos maiores, organize em diretórios:inventory/
 ├── production/
 │   ├── hosts.yml
@@ -256,3 +256,4 @@ Para projetos maiores, organize em diretórios:inventory/
     ├── hosts.yml
     └── group_vars/
         └── all.yml
+```
