@@ -19,11 +19,13 @@ Ansible é uma plataforma de automação que permite:
 ### 1. Agentless (Sem Agentes)
 
 Diferente de outras ferramentas, o Ansible não requer instalação de agentes nos servidores gerenciados.
-```text
-┌─────────────────┐         SSH          ┌─────────────────┐
-│  Nó de Controle │  ─────────────────>  │   Servidor 1    │
-│  (Ansible)      │                      │  (Sem agente)   │
-└─────────────────┘                      └─────────────────┘
+```mermaid
+graph LR
+    Control[Nó de Controle<br/>(Ansible)] -- SSH --> Server[Servidor 1<br/>(Sem agente)]
+    
+    %% Estilo opcional para destacar as caixas
+    style Control fill:#f9f9f9,stroke:#333,stroke-width:2px
+    style Server fill:#f9f9f9,stroke:#333,stroke-width:2px
 ```
 
 ### 2. Idempotente
