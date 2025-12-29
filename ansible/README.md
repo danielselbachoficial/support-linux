@@ -71,7 +71,7 @@ sudo apt install ansible -y
 
 # 4. Verificar instalação
 ansible --version
-
+```
 
 ---
 📖 Como Usar Esta Documentação
@@ -126,4 +126,4 @@ Se este guia foi útil para você, considere:
 
 ---
 Última atualização: 29 de Dezembro 2025
-`
+```
