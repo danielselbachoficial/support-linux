@@ -239,9 +239,3 @@ Agora que o Ansible está instalado, vamos configurá-lo:
 ---
 [← Voltar ao Índice](./README.md) | [Próximo: Configuração →](../03-configuracao)
 ---
-
-- ➡️ [Outras Distribuições](./outras-distros.md)
-
----
-
-[← Voltar ao Índice](./README.md) | [Próxima Seção: Configuração →](../03-configuracao)
