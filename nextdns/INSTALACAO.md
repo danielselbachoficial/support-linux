@@ -36,7 +36,8 @@ sudo nextdns restart
 ### ⚠️ Resolvendo Erro de Hostname (Sudo)
 Se após a instalação você visualizar o erro:
 
-**sudo: não foi possível resolver máquina [NOME-DO-PC]: Nome ou serviço desconhecido**
+daniel@LAP-DANIEL:~$ sudo dmidecode -t 1
+sudo: não foi possível resolver máquina LAP-DANIEL-SC-001: Nome ou serviço desconhecido
 
 A solução é adicionar o nome da máquina ao arquivo de hosts local:
 
