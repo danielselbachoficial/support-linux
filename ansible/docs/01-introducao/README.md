@@ -25,6 +25,5 @@ Após completar esta seção, você estará pronto para:
 - Começar a configurar seu ambiente
 
 ---
-
 [← Voltar ao Índice](../../README.md) | [Próxima Seção: Instalação →](../02-instalacao/)
 ---
