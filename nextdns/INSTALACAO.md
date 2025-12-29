@@ -13,7 +13,7 @@ O cliente de linha de comando é a forma mais robusta de usar o NextDNS no Linux
 Execute o comando oficial:
 ```bash
 sh -c "$(curl -sL [https://nextdns.io/install](https://nextdns.io/install))"
-`
+```
 
 > **Importante:** Siga as instruções no terminal para inserir seu ID e ativar o serviço.
 
@@ -31,12 +31,12 @@ sudo nextdns config set -report-client-info true
 
 # Reinicia o serviço para aplicar
 sudo nextdns restart
-`
+```
 
-⚠️ Resolvendo Erro de Hostname (Sudo)
+### ⚠️ Resolvendo Erro de Hostname (Sudo)
 Se após a instalação você visualizar o erro:
 
-sudo: não foi possível resolver máquina [NOME-DO-PC]: Nome ou serviço desconhecido
+**sudo: não foi possível resolver máquina [NOME-DO-PC]: Nome ou serviço desconhecido**
 
 A solução é adicionar o nome da máquina ao arquivo de hosts local:
 
@@ -64,7 +64,7 @@ DNS=2a07:a8c0::#000000.dns.nextdns.io
 DNS=45.90.30.0#000000.dns.nextdns.io
 DNS=2a07:a8c1::#000000.dns.nextdns.io
 DNSOverTLS=yes
-`
+```
 
 ### DNSMasq
 Adicione ao seu dnsmasq.conf:
@@ -75,7 +75,7 @@ strict-order
 server=45.90.28.0
 server=45.90.30.0
 add-cpe-id=000000
-`
+```
 
 ### DNSCrypt-Proxy
 No arquivo dnscrypt-proxy.toml:
@@ -85,7 +85,7 @@ server_names = ['NextDNS-000000']
 [static]
   [static.'NextDNS-000000']
   stamp = 'sdns://AgEAAAAAAAAAAAAOZG5zLm5leHRkbnMuaW8HLzAwMDAwMA'
-`
+```
 
 ### Unbound
 No arquivo unbound.conf:
@@ -95,7 +95,7 @@ forward-zone:
   forward-tls-upstream: yes
   forward-addr: 45.90.28.0#000000.dns.nextdns.io
   forward-addr: 45.90.30.0#000000.dns.nextdns.io
-`
+```
 
 ---
 ## 3. Endereços de IP Diretos
