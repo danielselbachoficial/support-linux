@@ -26,3 +26,14 @@ Diferente de outras ferramentas, o Ansible não requer instalação de agentes n
 └─────────────────┘                      └─────────────────┘
 ```
 
+### 2. Idempotente
+Executar a mesma tarefa múltiplas vezes produz o mesmo resultado.
+
+`yaml
+# Este código pode ser executado 100 vezes
+# O resultado será sempre o mesmo
+- name: Garantir que Nginx está instalado
+  apt:
+    name: nginx
+    state: present
+```
