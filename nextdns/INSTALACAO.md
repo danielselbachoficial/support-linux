@@ -2,7 +2,7 @@
 
 Este guia detalha os diferentes métodos de instalação do NextDNS, desde o cliente oficial até configurações manuais em resolvedores de terceiros.
 
-> **Importante:** Substitua `554499` (ou `SEU_ID`) pelo seu ID de configuração pessoal encontrado no painel do NextDNS.
+> **Importante:** Substitua `000000` (ou `SEU_ID`) pelo seu ID de configuração pessoal encontrado no painel do NextDNS.
 
 ---
 
@@ -59,10 +59,10 @@ Com vim: :wq (Salvar e sair)
 Edite o arquivo /etc/systemd/resolved.conf:
 ```bash
 [Resolve]
-DNS=45.90.28.0#554499.dns.nextdns.io
-DNS=2a07:a8c0::#554499.dns.nextdns.io
-DNS=45.90.30.0#554499.dns.nextdns.io
-DNS=2a07:a8c1::#554499.dns.nextdns.io
+DNS=45.90.28.0#000000.dns.nextdns.io
+DNS=2a07:a8c0::#000000.dns.nextdns.io
+DNS=45.90.30.0#000000.dns.nextdns.io
+DNS=2a07:a8c1::#000000.dns.nextdns.io
 DNSOverTLS=yes
 `
 
@@ -74,17 +74,17 @@ bogus-priv
 strict-order
 server=45.90.28.0
 server=45.90.30.0
-add-cpe-id=554499
+add-cpe-id=000000
 `
 
 ### DNSCrypt-Proxy
 No arquivo dnscrypt-proxy.toml:
 ```bash
-server_names = ['NextDNS-554499']
+server_names = ['NextDNS-000000']
 
 [static]
-  [static.'NextDNS-554499']
-  stamp = 'sdns://AgEAAAAAAAAAAAAOZG5zLm5leHRkbnMuaW8HLzg2ODE0Ng'
+  [static.'NextDNS-000000']
+  stamp = 'sdns://AgEAAAAAAAAAAAAOZG5zLm5leHRkbnMuaW8HLzAwMDAwMA'
 `
 
 ### Unbound
@@ -93,8 +93,8 @@ No arquivo unbound.conf:
 forward-zone:
   name: "."
   forward-tls-upstream: yes
-  forward-addr: 45.90.28.0#554499.dns.nextdns.io
-  forward-addr: 45.90.30.0#554499.dns.nextdns.io
+  forward-addr: 45.90.28.0#000000.dns.nextdns.io
+  forward-addr: 45.90.30.0#000000.dns.nextdns.io
 `
 
 ---
@@ -102,16 +102,12 @@ forward-zone:
 
 |Tipo de Conexão |Servidor Primário              |Servidor Secundário          |
 |----------------|-------------------------------|-----------------------------|
-|IPv4            |45.90.28.64                    |45.90.30.64                  |
-|IPv6            |2a07:a8c0::86:8146             |2a07:a8c1::86:8146           |
-
-Tipo de Conexão,Servidor Primário,Servidor Secundário
-IPv4 (com IP vinculado),45.90.28.64,45.90.30.64
-IPv6,2a07:a8c0::86:8146,2a07:a8c1::86:8146
+|IPv4            |45.90.28.x                     |45.90.30.x                   |
+|IPv6            |2a07:a8c0::00:0000             |2a07:a8c1::00:0000           |
 
 ---
 ## 4. Identificação Manual de Dispositivos
 Para que dispositivos apareçam com nomes personalizados nos logs sem o CLI:
 
-- **DNS-over-TLS:** Use NOME--DISPOSITIVO-554499.dns.nextdns.io
-- **DNS-over-HTTPS:** Use https://dns.nextdns.io/554499/NOME%20DISPOSITIVO
+- **DNS-over-TLS:** Use NOME--DISPOSITIVO-000000.dns.nextdns.io
+- **DNS-over-HTTPS:** Use https://dns.nextdns.io/000000/NOME%20DISPOSITIVO
