@@ -359,4 +359,13 @@ ansible webservers[0:2] -i hosts -m ping
 - Usar IPs em vez de nomes descritivos
 - Colocar senhas no inventário (use Vault)
 - Inventários muito grandes sem organização
-* Variáveis hardcoded em playbooks
+- Variáveis hardcoded em playbooks
+
+## Próximos Passos:
+Agora que você tem um inventário, configure a autenticação SSH:
+➡️ [Autenticação SSH](./autenticacao-ssh.md)
+
+---
+
+[← Voltar ao Índice](./README.md) | [Próxima Seção: Primeiros Passos →](../04-primeiros-passos)
+---
