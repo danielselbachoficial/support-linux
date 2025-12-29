@@ -108,3 +108,10 @@ forward-zone:
 Tipo de Conexão,Servidor Primário,Servidor Secundário
 IPv4 (com IP vinculado),45.90.28.64,45.90.30.64
 IPv6,2a07:a8c0::86:8146,2a07:a8c1::86:8146
+
+---
+## 4. Identificação Manual de Dispositivos
+Para que dispositivos apareçam com nomes personalizados nos logs sem o CLI:
+
+- **DNS-over-TLS:** Use NOME--DISPOSITIVO-554499.dns.nextdns.io
+- **DNS-over-HTTPS:** Use https://dns.nextdns.io/554499/NOME%20DISPOSITIVO
