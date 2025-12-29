@@ -195,4 +195,4 @@ graph TD
 ## Próximos Passos
 Agora que você entende o que é o Ansible, vamos verificar os pré-requisitos:
 
-➡️ [← Voltar ao Índice](../../README.md) | [Próxima Seção: Pré-requisitos →](../01-introducao/pre-requisitos.md)
+[← Voltar ao Índice](../../README.md) | [Próxima Seção: Pré-requisitos →](../01-introducao/pre-requisitos.md)
