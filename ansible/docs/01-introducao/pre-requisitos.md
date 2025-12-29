@@ -183,19 +183,12 @@ Antes de prosseguir, verifique:
 ### 1. Atualizar o sistema
 
 No nó de controle (Ubuntu):
-```
-sudo apt update && sudo apt upgrade -y
-```
 
 ```
 sudo apt update && sudo apt upgrade -y
 ```
 
 ### 2. Instalar Python (se necessário)
-
-```
-sudo apt install python3 python3-pip -y
-```
 
 ```
 sudo apt install python3 python3-pip -y
@@ -209,17 +202,9 @@ Gerar chave SSH (se não tiver):
 ssh-keygen -t ed25519 -C "seu-email@example.com"
 ```
 
-```
-ssh-keygen -t ed25519 -C "seu-email@example.com"
-```
-
 ### 4. Testar conectividade
 
 Testar SSH para um servidor:
-
-```
-ssh usuario@ip-do-servidor
-```
 
 ```
 ssh usuario@ip-do-servidor
