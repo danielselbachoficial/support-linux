@@ -30,3 +30,9 @@ O Ansible requer Python instalado:
 **Verificar versão do Python:**
 ```bash
 python3 --version
+```
+
+**Saída esperada:**
+```text
+Python 3.12.3
+```
