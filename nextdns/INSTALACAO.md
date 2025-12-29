@@ -44,11 +44,11 @@ A solução é adicionar o nome da máquina ao arquivo de hosts local:
 1. Verificar o nome do PC: hostname
 2. Edite o arquivo: sudo nano /etc/hosts ou sudo vim /etc/hosts
 3. Adicione seu hostname à linha do IP local:
-
+```bash
 # Informação para adicionar no arquivo "hosts"
 127.0.0.1   localhost [NOME-DO-PC]
 ::1         localhost [NOME-DO-PC]
-
+```
 4. Salve o arquivo que foi editado:
 Com nano: Salve (Ctrl+O, Enter) e saia (Ctrl+X)
 Com vim: :wq (Salvar e sair)
