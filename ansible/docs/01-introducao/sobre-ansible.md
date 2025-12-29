@@ -77,3 +77,37 @@ ansible all -m ping
 - Execução paralela
 - Conexões persistentes
 - Otimizado para performance
+
+## Casos de Uso
+
+### 1. Configuração de Servidores
+
+```yaml
+- name: Configurar servidor web
+  hosts: webservers
+  tasks:
+    - name: Instalar Nginx
+      apt:
+        name: nginx
+        state: present
+    
+    - name: Copiar configuração
+      template:
+        src: nginx.conf.j2
+        dest: /etc/nginx/nginx.conf
+```
+
+### 2. Deploy de Aplicações
+```yaml
+- name: Deploy da aplicação
+  hosts: production
+  tasks:
+    - name: Baixar código
+      git:
+        repo: https://github.com/user/app.git
+        dest: /var/www/app
+    
+    - name: Instalar dependências
+      pip:
+        requirements: /var/www/app/requirements.txt
+  ```
