@@ -100,3 +100,17 @@ max_clients=200
 | ansible_user                   | Usuário SSH               | root                   |
 | ansible_password               | Senha SSH                 | nenhuma                |
 | ansible_ssh_private_key_file   | Arquivo de chave privada  | ~/.ssh/id_rsa          |
+
+### Privilégios
+| Parâmetro                      | Descrição                 | 
+|--------------------------------|---------------------------|
+| ansible_become                 | Usar sudo/su              |
+| ansible_become_method          | Método (sudo, su, doas)   |
+| ansible_become_user            | Usuário para escalação    |
+| ansible_become_password        | Senha para escalação      |
+
+### Python
+| Parâmetro                      | Descrição                 | 
+|--------------------------------|---------------------------|
+| ansible_python_interpreter     | Caminho do Python         |
+| ansible_shell_type             | Tipo de shell             |
