@@ -36,4 +36,4 @@ Executar a mesma tarefa múltiplas vezes produz o mesmo resultado.
   apt:
     name: nginx
     state: present
-```
+`
