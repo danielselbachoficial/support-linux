@@ -91,10 +91,6 @@ Verificar se SSH está rodando:
 sudo systemctl status ssh
 ```
 
-```
-sudo systemctl status ssh
-```
-
 ### Python
 
 Os nós gerenciados precisam de Python:
@@ -104,10 +100,6 @@ Os nós gerenciados precisam de Python:
 Verificar Python no servidor remoto:
 
 ## bash
-
-```
-ssh user@servidor "python3 --version"
-```
 
 ```
 ssh user@servidor "python3 --version"
