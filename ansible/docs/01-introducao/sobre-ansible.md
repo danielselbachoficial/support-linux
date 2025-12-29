@@ -127,22 +127,23 @@ ansible all -m ping
 
 ## Arquitetura do Ansible
 
-```text
-┌─────────────────────────────────────────────────────────┐
-│                    Nó de Controle                       │
-│                                                         │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
-│  │  Inventário  │  │  Playbooks   │  │  Modules     │   │
-│  └──────────────┘  └──────────────┘  └──────────────┘   │
-└────────────────────────────┬────────────────────────────┘
-                             │
-                             │ SSH
-                             ▼
-┌────────────────────────────┴────────────────────────────┐
-│                    Nós Gerenciados                      │
-│                                                         │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
-│  │  Servidor 1  │  │  Servidor 2  │  │  Servidor 3  │   │
-│  └──────────────┘  └──────────────┘  └──────────────┘   │
-└─────────────────────────────────────────────────────────┘
+```markdown
+```mermaid
+graph TD
+    subgraph Control_Node [Nó de Controle]
+        Inv[Inventário]
+        Play[Playbooks]
+        Mod[Modules]
+    end
+
+    subgraph Managed_Nodes [Nós Gerenciados]
+        S1[Servidor 1]
+        S2[Servidor 2]
+        S3[Servidor 3]
+    end
+
+    Control_Node -- SSH --> Managed_Nodes
+    
+    style Control_Node fill:#f9f,stroke:#333,stroke-width:2px
+    style Managed_Nodes fill:#bbf,stroke:#333,stroke-width:2px
 ```
