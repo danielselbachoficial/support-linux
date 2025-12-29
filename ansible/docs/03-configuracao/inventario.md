@@ -234,3 +234,25 @@ all:
   vars:
     ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
 ```
+
+---
+## Organizando Inventários de projetos com boas práticas
+
+Para projetos maiores, organize em diretórios:inventory/
+├── production/
+│   ├── hosts.yml
+│   ├── group_vars/
+│   │   ├── all.yml
+│   │   ├── webservers.yml
+│   │   └── databases.yml
+│   └── host_vars/
+│       ├── web01.yml
+│       └── db01.yml
+├── staging/
+│   ├── hosts.yml
+│   └── group_vars/
+│       └── all.yml
+└── development/
+    ├── hosts.yml
+    └── group_vars/
+        └── all.yml
