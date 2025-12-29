@@ -50,8 +50,8 @@ A solução é adicionar o nome da máquina ao arquivo de hosts local:
 ::1         localhost [NOME-DO-PC]
 ```
 4. Salve o arquivo que foi editado:
-Com nano: Salve (Ctrl+O, Enter) e saia (Ctrl+X)
-Com vim: :wq (Salvar e sair)
+- Com nano: Salve (Ctrl+O, Enter) e saia (Ctrl+X)
+- Com vim: :wq (Salvar e sair)
 
 ---
 ## 2. Configurações Manuais e Resolvedores
