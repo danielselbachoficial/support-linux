@@ -34,8 +34,6 @@ pip3 install -e
 
 ## Qual método escolher?
 
-| Método | Vantagens | Desvantagens |
-
 | Método                    | Vantagens                         | Desvantagens           |   
 |---------------------------|-----------------------------------|------------------------|
 | Gerenciador de Pacotes    | Fácil, atualizações automáticas   | Versão pode ser antiga
