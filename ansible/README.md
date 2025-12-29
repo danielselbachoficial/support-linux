@@ -122,8 +122,6 @@ Se este guia foi útil para você, considere:
 - 📺 Se inscrever no canal do YouTube
 - 🐛 Reportar bugs ou sugerir melhorias
 
-
-
 ---
-Última atualização: 29 de Dezembro 2025
+**Última atualização: 29 de Dezembro 2025**
 ```
