@@ -106,5 +106,5 @@ Escolha seu sistema operacional e siga o guia de instalação:
 
 ---
 
-[← Voltar ao Índice](./README.md) | [Próxima Seção: Configuração →](../03-configuracao)
+[← Voltar ao Índice](../../README.md) | [Próxima Seção: Configuração →](../03-configuracao)
 ---
