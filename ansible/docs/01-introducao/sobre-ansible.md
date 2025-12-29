@@ -37,3 +37,43 @@ Executar a mesma tarefa múltiplas vezes produz o mesmo resultado.
     name: nginx
     state: present
 ```
+
+### 3. Declarativo
+Você define o que quer, não como fazer.
+```yaml
+# Você declara o estado desejado
+- name: Nginx deve estar rodando
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+```
+
+### 4. Baseado em SSH
+Usa SSH para comunicação, aproveitando a infraestrutura existente.
+```bash
+# Ansible usa SSH padrão
+ansible all -m ping
+
+# Equivalente a: ssh user@host "comando"
+```
+
+## Por que usar Ansible?
+
+### Simplicidade
+
+- Sintaxe YAML fácil de ler
+- Curva de aprendizado suave
+- Não requer conhecimento de programação
+
+### Poderoso
+
+- Gerencia milhares de servidores
+- Integra com cloud providers
+- Extensível via plugins e modules
+
+### Eficiente
+
+- Execução paralela
+- Conexões persistentes
+- Otimizado para performance
