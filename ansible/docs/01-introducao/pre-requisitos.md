@@ -244,13 +244,6 @@ docker run -d --name ansible-test \
   ubuntu:24.04
 ```
 
-```
-# Criar container para testes
-docker run -d --name ansible-test \
-  -p 2222:22 \
-  ubuntu:24.04
-```
-
 ### Opção 3: Cloud Providers
 
 -   AWS Free Tier: 12 meses grátis
@@ -273,17 +266,6 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-```
-Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/jammy64"
-  
-  config.vm.define "server1" do |server|
-    server.vm.hostname = "server1"
-    server.vm.network "private_network", ip: "192.168.56.10"
-  end
-end
-```
-
 Executar:
 
 ```
@@ -293,20 +275,6 @@ vagrant up
 ## Verificação Final
 
 Execute estes comandos para verificar se está tudo pronto:
-
-```
-# Verificar Python
-python3 --version
-
-# Verificar SSH
-ssh -V
-
-# Verificar conectividade (substitua pelo seu servidor)
-ping -c 3 192.168.1.100
-
-# Verificar acesso SSH (substitua pelo seu servidor)
-ssh -o ConnectTimeout=5 usuario@192.168.1.100 "echo 'SSH OK'"
-```
 
 ```
 # Verificar Python
