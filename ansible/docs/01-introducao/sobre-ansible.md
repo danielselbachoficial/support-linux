@@ -21,9 +21,9 @@ Ansible é uma plataforma de automação que permite:
 Diferente de outras ferramentas, o Ansible não requer instalação de agentes nos servidores gerenciados.
 ```mermaid
 graph LR
-    Control[Nó de Controle<br/>(Ansible)] -- SSH --> Server[Servidor 1<br/>(Sem agente)]
+    Control["Nó de Controle<br/>(Ansible)"] -- SSH --> Server["Servidor 1<br/>(Sem agente)"]
     
-    %% Estilo opcional para destacar as caixas
+    %% Estilo opcional
     style Control fill:#f9f9f9,stroke:#333,stroke-width:2px
     style Server fill:#f9f9f9,stroke:#333,stroke-width:2px
 ```
