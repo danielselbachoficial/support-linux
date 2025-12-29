@@ -111,3 +111,42 @@ O usuário usado pelo Ansible precisa de:
 -   ✅ Acesso SSH ao servidor
 -   ✅ Permissões sudo (se precisar executar tarefas privilegiadas)
 -   ✅ Shell válido (bash, sh, etc.)
+
+## Conhecimentos Prévios Recomendados
+
+### Essenciais
+
+Para aproveitar melhor este guia, você deve ter conhecimento básico de:
+
+1.  Linux/Unix
+    -   Navegação no terminal
+    -   Comandos básicos (ls, cd, mkdir, etc.)
+    -   Gerenciamento de arquivos e permissões
+
+2.  SSH
+    -   Como conectar via SSH
+    -   Conceito de chaves públicas/privadas
+    -   Configuração básica de SSH
+
+3.  Linha de Comando
+    -   Executar comandos
+    -   Entender saídas de comandos
+    -   Usar editores de texto (nano, vim)
+
+### Desejáveis
+
+Conhecimentos que ajudam, mas não são obrigatórios:
+
+1.  YAML
+    -   Sintaxe básica
+    -   Estrutura de dados (listas, dicionários)
+
+2.  Redes
+    -   Conceitos de IP, portas
+    -   DNS básico
+    -   Firewall
+
+3.  Administração de Sistemas
+    -   Gerenciamento de pacotes (apt, yum)
+    -   Serviços e systemd
+    -   Configuração de servidores
