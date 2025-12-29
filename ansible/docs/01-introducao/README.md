@@ -27,3 +27,4 @@ Após completar esta seção, você estará pronto para:
 ---
 
 [← Voltar ao Índice](../../README.md) | [Próxima Seção: Instalação →](../02-instalacao/)
+---
