@@ -111,3 +111,38 @@ ansible all -m ping
       pip:
         requirements: /var/www/app/requirements.txt
   ```
+
+### 3. Provisionamento de Cloud
+```yaml
+- name: Criar instância EC2
+  hosts: localhost
+  tasks:
+    - name: Provisionar servidor
+      ec2:
+        key_name: mykey
+        instance_type: t2.micro
+        image: ami-12345678
+        region: us-east-1
+ ```
+
+## Arquitetura do Ansible
+
+```text
+┌─────────────────────────────────────────────────────────┐
+│                    Nó de Controle                       │
+│                                                         │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
+│  │  Inventário  │  │  Playbooks   │  │  Modules     │   │
+│  └──────────────┘  └──────────────┘  └──────────────┘   │
+└────────────────────────────┬────────────────────────────┘
+                             │
+                             │ SSH
+                             ▼
+┌────────────────────────────┴────────────────────────────┐
+│                    Nós Gerenciados                      │
+│                                                         │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
+│  │  Servidor 1  │  │  Servidor 2  │  │  Servidor 3  │   │
+│  └──────────────┘  └──────────────┘  └──────────────┘   │
+└─────────────────────────────────────────────────────────┘
+```
