@@ -230,3 +230,18 @@ ansible --version
 | pip                       | Versão mais recente, estável      | Apenas Ubuntu/Debian
 | apt                       | Versão mais recente               | Requer gerenciar PATH
 
+### Próximos Passos
+
+Agora que o Ansible está instalado, vamos configurá-lo:
+
+➡️ Configuração do Inventário
+
+---
+[← Voltar ao Índice](./README.md) | [Próximo: Configuração →](../03-configuracao)
+---
+
+- ➡️ [Outras Distribuições](./outras-distros.md)
+
+---
+
+[← Voltar ao Índice](./README.md) | [Próxima Seção: Configuração →](../03-configuracao)
