@@ -114,3 +114,123 @@ max_clients=200
 |--------------------------------|---------------------------|
 | ansible_python_interpreter     | Caminho do Python         |
 | ansible_shell_type             | Tipo de shell             |
+
+
+## Exemplos
+
+### Exemplo de inventário completo em INI
+```ini
+# Grupo de servidores Proxmox
+[proxmox]
+pve01 ansible_host=192.168.1.100 ansible_user=root
+pve02 ansible_host=192.168.1.101 ansible_user=root
+pve03 ansible_host=192.168.1.102 ansible_user=root
+
+[proxmox:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_connection=ssh
+ansible_port=22
+
+# Grupo de servidores web
+[webservers]
+web01 ansible_host=192.168.1.200 nginx_port=80
+web02 ansible_host=192.168.1.201 nginx_port=8080
+web03 ansible_host=192.168.1.202 nginx_port=80
+
+[webservers:vars]
+ansible_user=ubuntu
+ansible_become=yes
+ansible_become_method=sudo
+http_port=80
+max_clients=200
+
+# Grupo de bancos de dados
+[databases]
+db01 ansible_host=192.168.1.210 db_role=primary
+db02 ansible_host=192.168.1.211 db_role=replica
+
+[databases:vars]
+ansible_user=ubuntu
+ansible_become=yes
+db_engine=mysql
+db_port=3306
+
+# Grupo de produção (combina outros grupos)
+[production:children]
+webservers
+databases
+
+# Grupo de staging
+[staging]
+staging01 ansible_host=192.168.1.50
+
+# Todos os hosts
+[all:vars]
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+```
+
+### Exemplo de inventário completo em YAML
+```yaml
+all:
+  children:
+    proxmox:
+      hosts:
+        pve01:
+          ansible_host: 192.168.1.100
+          ansible_user: root
+        pve02:
+          ansible_host: 192.168.1.101
+          ansible_user: root
+        pve03:
+          ansible_host: 192.168.1.102
+          ansible_user: root
+      vars:
+        ansible_python_interpreter: /usr/bin/python3
+        ansible_connection: ssh
+        ansible_port: 22
+    
+    webservers:
+      hosts:
+        web01:
+          ansible_host: 192.168.1.200
+          nginx_port: 80
+        web02:
+          ansible_host: 192.168.1.201
+          nginx_port: 8080
+        web03:
+          ansible_host: 192.168.1.202
+          nginx_port: 80
+      vars:
+        ansible_user: ubuntu
+        ansible_become: yes
+        ansible_become_method: sudo
+        http_port: 80
+        max_clients: 200
+    
+    databases:
+      hosts:
+        db01:
+          ansible_host: 192.168.1.210
+          db_role: primary
+        db02:
+          ansible_host: 192.168.1.211
+          db_role: replica
+      vars:
+        ansible_user: ubuntu
+        ansible_become: yes
+        db_engine: mysql
+        db_port: 3306
+    
+    production:
+      children:
+        - webservers
+        - databases
+    
+    staging:
+      hosts:
+        staging01:
+          ansible_host: 192.168.1.50
+  
+  vars:
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+```
