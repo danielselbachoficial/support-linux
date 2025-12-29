@@ -283,4 +283,4 @@ Se todos os comandos funcionarem, você está pronto para instalar o Ansible!
 
 Agora que você verificou todos os pré-requisitos, vamos instalar o Ansible:
 
-[← Voltar: Sobre o Ansible](./sobre-ansible.md) | [Índice](../README.md) | [Próximo: Instalação →](../../support-linux/ansible/docs/02-instalacao/ubuntu-24-04.md)---
+[← Voltar: Sobre o Ansible](./sobre-ansible.md) | [Índice](./README.md) | [Próximo: Instalação →](../../support-linux/ansible/docs/02-instalacao/ubuntu-24-04.md)---
