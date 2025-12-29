@@ -71,3 +71,59 @@ sudo apt install ansible -y
 
 # 4. Verificar instalação
 ansible --version
+
+
+---
+📖 Como Usar Esta Documentação
+Esta documentação está organizada de forma progressiva:
+1. Iniciantes: Comece pela seção Introdução e siga em ordem
+2. Intermediários: Vá direto para Playbooks e Projeto Profissional
+3. Avançados: Consulte Melhores Práticas e Collections
+
+
+---
+💡 Exemplos Práticos
+Todos os exemplos de código estão disponíveis no diretório examples/:
+- Inventários: Exemplos de inventários para diferentes ambientes
+- Playbooks: Playbooks prontos para uso
+- Roles: Roles reutilizáveis para tarefas comuns
+
+
+---
+🎥 Vídeo Tutorial
+Assista ao tutorial completo no YouTube para ver tudo isso em ação!
+![YouTube Tutorial](SEU_LINK_AQUI) - Em breve
+
+
+---
+🤝 Contribuindo
+Contribuições são bem-vindas! Veja o arquivo CONTRIBUTING.md para detalhes sobre como contribuir.
+
+
+---
+📄 Licença
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+
+---
+Autor
+Daniel Selbach - CISO @ AFSIM TECH
+- GitHub: [@danielselbachoficial](https://github.com/danielselbachoficial/)
+- YouTube: [@DSInfraEmAcao](https://www.youtube.com/@DSInfraEmAcao)
+- LinkedIn: [@danielselbachoficial](https://www.linkedin.com/in/danielselbachoficial/)
+
+
+---
+⭐ Apoie Este Projeto
+Se este guia foi útil para você, considere:
+
+- ⭐ Dar uma estrela neste repositório
+- 🔄 Compartilhar com sua rede
+- 📺 Se inscrever no canal do YouTube
+- 🐛 Reportar bugs ou sugerir melhorias
+
+
+
+---
+Última atualização: 29 de Dezembro 2025
+`
