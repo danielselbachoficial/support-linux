@@ -237,8 +237,10 @@ all:
 
 ---
 ## Organizando Inventários de projetos com boas práticas
+
+Para projetos maiores, organize em diretórios:
 ```ini
-Para projetos maiores, organize em diretórios:inventory/
+inventory/
 ├── production/
 │   ├── hosts.yml
 │   ├── group_vars/
@@ -257,3 +259,104 @@ Para projetos maiores, organize em diretórios:inventory/
     └── group_vars/
         └── all.yml
 ```
+
+#### Arquivo: inventory/production/hosts.yml
+```yaml
+all:
+  children:
+    webservers:
+      hosts:
+        web01:
+          ansible_host: 192.168.1.200
+        web02:
+          ansible_host: 192.168.1.201
+    databases:
+      hosts:
+        db01:
+          ansible_host: 192.168.1.210
+```
+
+#### Arquivo: inventory/production/group_vars/webservers.yml
+```yaml
+---
+ansible_user: ubuntu
+ansible_become: yes
+ansible_become_method: sudo
+nginx_version: latest
+ssl_enabled: true
+ssl_enabled: true
+```
+
+#### Arquivo: inventory/production/host_vars/web01.yml
+```yaml
+---
+nginx_port: 80
+server_role: primary
+```
+
+### Testando o Inventário
+
+#### Listar todos os hosts
+```bash
+ansible-inventory -i hosts --list
+```
+
+#### Listar hosts de um grupo
+```bash
+ansible-inventory -i hosts --graph webservers
+```
+
+#### Verificar variáveis de um host
+```bash
+ansible-inventory -i hosts --host web01
+```
+
+### Padrões de Seleção
+
+Ao executar comandos, você pode selecionar hosts de várias formas:
+
+#### Todos os hosts
+```bash
+ansible all -i hosts -m ping
+```
+
+#### Um grupo específico
+```bash
+ansible webservers -i hosts -m ping
+```
+
+#### Múltiplos grupos
+```bash
+ansible webservers,databases -i hosts -m ping
+```
+
+#### Padrão de nome
+```bash
+ansible "web*" -i hosts -m ping
+```
+
+#### Exclusão
+```bash
+ansible all -i hosts -m ping --limit "!databases"
+```
+
+#### Intervalo
+```bash
+ansible webservers[0:2] -i hosts -m ping
+```
+
+### Boas Práticas
+
+#### ✅ Faça
+- Use nomes descritivos para hosts e grupos
+- Organize em ambientes (production, staging, development)
+- Use variáveis para dados reutilizáveis
+- Documente o propósito de cada grupo
+- Mantenha inventários em controle de versão
+
+#### ❌ Evite
+- Misturar ambientes no mesmo inventário
+- Usar IPs em vez de nomes descritivos
+- Colocar senhas no inventário (use Vault)
+- Inventários muito grandes sem organização
+* Variáveis hardcoded em playbooks
