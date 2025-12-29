@@ -160,3 +160,45 @@ graph TD
     style S2 fill:#fff,stroke:#333
     style S3 fill:#fff,stroke:#333
 ```
+
+## Componentes
+
+1. Nó de Controle: Máquina onde o Ansible está instalado
+2. Inventário: Lista de servidores gerenciados
+3. Playbooks: Arquivos YAML com as tarefas
+4. Modules: Unidades de código que executam tarefas
+5. Nós Gerenciados: Servidores que serão automatizados
+
+## Comparação com Outras Ferramentas
+| Característica | Ansible | Puppet | Chef | SaltStack |
+
+|----------------|---------|--------|------|-----------|
+
+| Agentless | ✅ Sim | ❌ Não | ❌ Não | ⚠️ Opcional |
+
+| Linguagem | YAML | Ruby DSL | Ruby | YAML/Python |
+
+| Curva de Aprendizado | Baixa | Alta | Alta | Média |
+
+| Comunicação | SSH | SSL | SSL | ZeroMQ |
+
+| Idempotência | ✅ Sim | ✅ Sim | ✅ Sim | ✅ Sim |
+
+## Quando usar Ansible?
+
+### ✅ Use Ansible quando:
+- Precisa de automação rápida e simples
+- Quer evitar instalação de agentes
+- Tem infraestrutura baseada em SSH
+- Precisa de sintaxe legível (YAML)
+- Quer integração fácil com CI/CD
+
+### ⚠️ Considere alternativas quando:
+- Precisa de execução em tempo real
+- Tem requisitos muito específicos de performance
+- Já tem infraestrutura estabelecida com outra ferramenta
+
+## Próximos Passos
+Agora que você entende o que é o Ansible, vamos verificar os pré-requisitos:
+
+➡️ Pré-requisitos
