@@ -6,7 +6,7 @@ Repositório dedicado a documentar a instalação, otimização e resolução de
 1. [O que é o NextDNS?](./SOBRE-NEXTDNS.md) - Entenda a ferramenta e os planos (Free vs Pro).
 2. [Guia de Instalação](./INSTALACAO.md) - Passo a passo para CLI, Systemd-Resolved e outros.
 3. [Solução de Problemas](./INSTALACAO.md#resolvendo-erro-de-hostname) - Como corrigir o erro de `sudo` e hostname no Ubuntu.
-4. [Documentação oficial do NextDNS](https://github.com/nextdns/nextdns/wiki)
+4. [Documentação oficial do NextDNS](https://github.com/nextdns/nextdns/wiki) - Contém a documentação oficial do NextDNS.
 
 ## 🚀 Início Rápido (Ubuntu/Debian)
 Para instalar o cliente oficial via linha de comando:
