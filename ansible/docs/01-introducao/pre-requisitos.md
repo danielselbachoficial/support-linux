@@ -36,3 +36,13 @@ python3 --version
 ```text
 Python 3.12.3
 ```
+
+### Recursos de Hardware
+
+**Requisitos mínimos:**
+| Recurso        | Mínimo   | Recomendado  |   
+|---------------------------|--------------|----------
+| CPU            | ✅ Sim   | 1 core       | 2+ cores  
+| RAM            | YAML     | 512 MB       | 2 GB+    
+| Disco          | Baixa    | 1 GB         | 5 GB+    
+| Rede           | SSH      | 1 Mbps       | 10 Mbps+
