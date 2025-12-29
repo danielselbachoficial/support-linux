@@ -101,10 +101,10 @@ ansible-doc -l | wc -l
 
 Escolha seu sistema operacional e siga o guia de instalação:
 
-- ➡️ Ubuntu 24.04 (Recomendado para iniciantes)(./ubuntu-24-04.md)
-- ➡️ Outras Distribuições(./outras-distros.md)
+- ➡️ [Ubuntu 24.04 (Recomendado para iniciantes)](./ubuntu-24-04.md)
+- ➡️ [Outras Distribuições](./outras-distros.md)
 
 ---
 
-[← Voltar ao Índice](./README.md) | [Próxima Seção: Configuração →](./03-configuracao/)
+[← Voltar ao Índice](./README.md) | [Próxima Seção: Configuração →](./03-configuracao)
 ---
