@@ -127,23 +127,33 @@ ansible all -m ping
 
 ## Arquitetura do Ansible
 
-```markdown
 ```mermaid
 graph TD
+    %% Definição do Nó de Controle
     subgraph Control_Node [Nó de Controle]
+        direction LR
         Inv[Inventário]
         Play[Playbooks]
         Mod[Modules]
     end
 
+    %% Definição dos Nós Gerenciados
     subgraph Managed_Nodes [Nós Gerenciados]
+        direction LR
         S1[Servidor 1]
         S2[Servidor 2]
         S3[Servidor 3]
     end
 
+    %% Conexão SSH
     Control_Node -- SSH --> Managed_Nodes
-    
-    style Control_Node fill:#f9f,stroke:#333,stroke-width:2px
-    style Managed_Nodes fill:#bbf,stroke:#333,stroke-width:2px
-```
+
+    %% Estilização (Opcional - para ficar mais bonito)
+    style Control_Node fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    style Managed_Nodes fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    style Inv fill:#fff,stroke:#333
+    style Play fill:#fff,stroke:#333
+    style Mod fill:#fff,stroke:#333
+    style S1 fill:#fff,stroke:#333
+    style S2 fill:#fff,stroke:#333
+    style S3 fill:#fff,stroke:#333
