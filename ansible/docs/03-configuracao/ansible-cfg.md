@@ -441,4 +441,8 @@ Próximos Passos
 
 Agora que está tudo configurado, vamos testar a conectividade:
 
-➡️ [Testando Conectividade](./03-configuracao/04-primeiros-passos/testando-conectividade.md)
+➡️ [Testando Conectividade](../04-primeiros-passos/testando-conectividade.md)
+
+---
+[← Voltar ao Índice](../../README.md) | [Próximo: Configuração →](../04-primeiros-passos)
+---
