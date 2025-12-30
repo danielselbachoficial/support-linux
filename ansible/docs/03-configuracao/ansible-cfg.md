@@ -437,7 +437,7 @@ ansible-config get-config-value -c ansible.cfg -k inventory
 - Configurações muito permissivas
 - Ignorar avisos de segurança
 
-Próximos Passos
+## Próximos Passos
 
 Agora que está tudo configurado, vamos testar a conectividade:
 
