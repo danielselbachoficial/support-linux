@@ -93,6 +93,7 @@ ssh-copy-id -i ~/.ssh/ansible_key.pub root@192.168.1.100
 ```
 
 #### Saída esperada: 
+```bash
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/user/.ssh/ansible_key.pub"
 /usr/bin/ssh-copy-id: INFO: attempting to connect to host "192.168.1.100" with user "root"
 root@192.168.1.100's password: [digite a senha]
@@ -103,6 +104,7 @@ Now try logging in with:
    "ssh -i ~/.ssh/ansible_key root@192.168.1.100"
 
 and check to add the new hosts key to 'known_hosts'.
+```
 
 #### O que ssh-copy-id faz:
 1. Lê a chave pública
@@ -117,8 +119,8 @@ ssh -i ~/.ssh/ansible_key root@192.168.1.100
 ```
 
 #### Saída esperada:
-Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.8.0-28-generic x86_64)
 ```bash
+Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.8.0-28-generic x86_64)
 root@pve01:~#
 ```
 
