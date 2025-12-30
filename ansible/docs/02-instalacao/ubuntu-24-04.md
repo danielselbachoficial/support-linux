@@ -234,7 +234,7 @@ ansible --version
 
 Agora que o Ansible está instalado, vamos configurá-lo:
 
-➡️ Configuração do Inventário
+➡️ [Configuração do Inventário](../03-configuracao/inventario.md)
 
 ---
 [← Voltar ao Índice](../../README.md) | [Próximo: Configuração →](../03-configuracao)
