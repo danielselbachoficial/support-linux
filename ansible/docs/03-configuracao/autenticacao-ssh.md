@@ -349,7 +349,7 @@ Host aws-servers
 
 Agora que a autenticação está configurada, personalize o Ansible:
 
-➡️ [Arquivo ansible.cfg](../ansible-cfg.md)
+➡️ [Arquivo ansible.cfg](./ansible-cfg.md)
 
 ---
 [← Voltar ao Índice](../../README.md) | [Próximo: Primeiros Passos →](../04-primeiros-passos)
