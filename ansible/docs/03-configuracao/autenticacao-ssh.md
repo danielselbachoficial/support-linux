@@ -183,11 +183,6 @@ ssh-keyscan -H 192.168.1.100 >> ~/.ssh/known_hosts
 export ANSIBLE_HOST_KEY_CHECKING=False
 ```
 
-##### Solução 2: Desabilitar verificação (apenas para labs)
-```bash
-export ANSIBLE_HOST_KEY_CHECKING=False
-```
-
 Ou em ansible.cfg:
 ```ini
 [defaults]
@@ -204,7 +199,7 @@ Permission denied (publickey,password).
 2. Chave pública não copiada corretamente
 3. Usuário errado
 
-##### Solução: 1:
+#### Solução:
 ```bash
 # Verificar permissões
 ls -la ~/.ssh/ansible_key
@@ -215,3 +210,147 @@ chmod 600 ~/.ssh/ansible_key
 # Testar com verbose
 ssh -vvv -i ~/.ssh/ansible_key root@192.168.1.100
 ```
+
+### Problema 3: Chave Não Encontrada
+
+#### Erro:
+Could not open a connection to your authentication agent.
+
+#### Solução:
+```bash
+# Iniciar ssh-agent
+eval $(ssh-agent -s)
+
+# Adicionar chave
+ssh-add ~/.ssh/ansible_key
+
+# Verificar chaves adicionadas
+ssh-add -l
+```
+
+### Problema 4: Timeout na Conexão
+
+##### Erro:
+Failed to connect to the host via ssh: ssh: connect to host 192.168.1.100 port 22: Connection timed out
+
+##### Causas possíveis:
+1. Servidor não está acessível
+2. Firewall bloqueando porta 22
+3. SSH não está rodando no servidor
+
+##### Solução:
+```bash
+# Testar conectividade
+ping 192.168.1.100
+
+# Testar porta SSH
+telnet 192.168.1.100 22
+
+# Ou com nmap
+nmap -p 22 192.168.1.100
+
+# Testar SSH com verbose
+ssh -vvv root@192.168.1.100
+```
+
+## Autenticação por Senha (Não Recomendado)
+
+Se precisar usar senha (apenas para testes):
+
+### Método 1: Usar Flag -k
+
+```bash
+ansible proxmox -i hosts -m ping -k
+```
+
+A flag -k solicita a senha interativamente.
+
+### Método 2: Usar Variável no Inventário
+```ini
+[proxmox]
+pve01 ansible_host=192.168.1.100 ansible_user=root ansible_password=sua_senha
+```
+**⚠️ Nunca coloque senhas em arquivos de controle de versão!**
+
+### Método 3: Usar Ansible Vault
+
+```bash
+# Criar arquivo com senha
+ansible-vault create secrets.yml
+```
+
+Conteúdo:
+```yaml
+---
+ansible_password: sua_senha_secreta
+```
+
+Usar no playbook:
+```bash
+ansible-playbook playbook.yml --ask-vault-pass
+```
+
+## Gerenciando Múltiplas Chaves
+
+Se você tem múltiplas chaves SSH:
+
+### Adicionar ao ssh-agent
+```bash
+# Iniciar ssh-agent
+eval $(ssh-agent -s)
+
+# Adicionar múltiplas chaves
+ssh-add ~/.ssh/ansible_key
+ssh-add ~/.ssh/github_key
+ssh-add ~/.ssh/aws_key
+
+# Listar chaves adicionadas
+ssh-add -l
+```
+
+### Configurar em ~/.ssh/config
+```bash
+Host ansible-servers
+    HostName 192.168.1.100
+    User root
+    IdentityFile ~/.ssh/ansible_key
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/github_key
+
+Host aws-servers
+    HostName *.compute.amazonaws.com
+    User ec2-user
+    IdentityFile ~/.ssh/aws_key
+```
+
+## Boas Práticas de Segurança
+
+### ✅ Faça
+- Use Ed25519 para novas chaves
+- Proteja chaves privadas com passphrase
+- Use permissões corretas (600 para chaves privadas)
+- Rotacione chaves regularmente
+- Use ssh-agent para gerenciar chaves
+- Mantenha chaves em local seguro
+- Use diferentes chaves para diferentes ambientes
+
+### ❌ Evite
+- Usar RSA 2048 (obsoleto)
+- Deixar chaves sem passphrase
+- Compartilhar chaves privadas
+- Colocar chaves em repositórios públicos
+- Usar a mesma chave para tudo
+- Deixar chaves com permissões abertas
+
+## Próximos Passos
+
+Agora que a autenticação está configurada, personalize o Ansible:
+
+➡️ [Arquivo ansible.cfg](../ansible-cfg.md)
+
+---
+[← Voltar ao Índice](../../README.md) | [Próximo: Primeiros Passos →](../04-primeiros-passos)
+---
